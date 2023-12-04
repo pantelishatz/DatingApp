@@ -1,40 +1,36 @@
 # DatingApp
 
-Η εφαρμογή DatingApp είναι μια πλατφόρμα που σας επιτρέπει να συνδεθείτε με άλλα άτομα και να βρείτε νέους φίλους ή πιθανούς ερωτικούς συντρόφους. Η εφαρμογή είναι χτισμένη χρησιμοποιώντας C# ASP.NET για το backend και Angular για το frontend.
+The DatingApp is a platform that enables users to connect with others, find new friends, or discover potential romantic partners. This application is built using C# ASP.NET for the backend and Angular for the frontend.
 
-## Προαπαιτήσεις
+## Prerequisites
 
-Πριν ξεκινήσετε τη χρήση της εφαρμογής, βεβαιωθείτε ότι έχετε εγκαταστήσει τα παρακάτω:
+Before you begin using the application, ensure that you have the following installed:
 
-- [Visual Studio](https://visualstudio.microsoft.com/) για το C# ASP.NET
-- [Node.js](https://nodejs.org/) για το Angular
-- [Angular CLI](https://cli.angular.io/) για το Angular development
+- [Visual Studio](https://visualstudio.microsoft.com/) for C# ASP.NET
+- [Node.js](https://nodejs.org/) for Angular
+- [Angular CLI](https://cli.angular.io/) for Angular development
 
-## Εγκατάσταση και Εκτέλεση
+## Installation and Execution
 
-1. Κλωνάρετε το αποθετήριο:
+1. Clone the repository:
 
     ```bash
     git clone https://github.com/yourusername/DatingApp.git
     ```
 
-2. Μεταβείτε στους φακέλους `DatingApp.API` και `DatingApp-SPA` και εκτελέστε:
+2. Navigate to the `DatingApp.API` folder and run:
 
     ```bash
     cd DatingApp.API
     dotnet run
-
-    cd ../DatingApp-SPA
-    npm install
-    ng serve
     ```
 
-3. Ανοίξτε τον περιηγητή σας και μεταβείτε στη διεύθυνση `http://localhost:4200/` για να δείτε την εφαρμογή σας.
+3. Open your browser and go to `http://localhost:5001/` to view your application.
 
-## Συνεισφορές
+## Contributions
 
-Είμαστε ανοιχτοί σε συνεισφορές! Εάν έχετε κάποια ιδέα ή βελτίωση, παρακαλούμε υποβάλετε μια αίτηση pull.
+We welcome contributions! If you have any ideas or improvements, please submit a pull request.
 
-## Άδεια
+## License
 
-Αυτή η εφαρμογή είναι ανοικτού κώδικα υπό την άδεια [MIT](LICENSE).
+This application is open-source under the [MIT License](LICENSE).
