@@ -6,11 +6,18 @@ import { User } from 'src/app/_models/user';
 import { UserParams } from 'src/app/_models/userParams';
 import { AccountService } from 'src/app/_services/account.service';
 import { MembersService } from 'src/app/_services/members.service';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { MemberCardComponent } from '../member-card/member-card.component';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import { FormsModule } from '@angular/forms';
+import { NgIf, NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-member-list',
-  templateUrl: './member-list.component.html',
-  styleUrls: ['./member-list.component.css']
+    selector: 'app-member-list',
+    templateUrl: './member-list.component.html',
+    styleUrls: ['./member-list.component.css'],
+    standalone: true,
+    imports: [NgIf, FormsModule, NgFor, ButtonsModule, MemberCardComponent, PaginationModule]
 })
 export class MemberListComponent implements OnInit {
  // members$: Observable<Member[]> | undefined;
