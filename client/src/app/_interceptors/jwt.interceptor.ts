@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import {
   HttpRequest,
   HttpHandler,
@@ -14,17 +14,14 @@ export class JwtInterceptor implements HttpInterceptor {
   constructor(private accountService: AccountService) {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    this.accountService.currentUser$.pipe(take(1)).subscribe({
-      next: user => {
-        if (user) {
+    const accountService = inject(AccountService);
+        if (accountService.currentUser()) {
           request = request.clone({
             setHeaders: {
-              Authorization: `Bearer ${user.token}`
+              Authorization: `Bearer ${accountService.currentUser()?.token}`
             }
           })
         }
-      }
-    })
 
     return next.handle(request);
   }

@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
+import { Component, HostListener, inject, OnInit, ViewChild } from '@angular/core';
 import { NgForm, FormsModule } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { take } from 'rxjs';
@@ -18,6 +18,7 @@ import { NgIf } from '@angular/common';
     imports: [NgIf, TabsModule, FormsModule, PhotoEditorComponent]
 })
 export class MembersEditComponent implements OnInit {
+  private accountService = inject(AccountService);
   @ViewChild('editForm') editForm: NgForm | undefined;
   @HostListener('window:beforeunload', ['$event']) unloadNotification($event: any) {
     if (this.editForm?.dirty) {
@@ -25,13 +26,9 @@ export class MembersEditComponent implements OnInit {
     }
   }
   member: Member | undefined;
-  user: User | null = null;
+  user = this.accountService.currentUser();
 
-  constructor(private accountService: AccountService, private memberService: MembersService, private toastr: ToastrService) {
-    this.accountService.currentUser$.pipe(take(1)).subscribe({
-      next: user => this.user = user
-    })
-  }
+  constructor(private memberService: MembersService, private toastr: ToastrService) {}
 
   ngOnInit(): void {
       this.loadMember();
