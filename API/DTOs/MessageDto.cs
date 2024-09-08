@@ -1,5 +1,3 @@
-using API.Entities;
-
 namespace API.DTOs
 {
     public class MessageDto
@@ -12,7 +10,7 @@ namespace API.DTOs
         public required string RecipientUsername { get; set; }
         public required string RecipientPhotoUrl { get; set; }
         public required string Content { get; set; }
-        public DateTime DateRead { get; set; }
+        public DateTime? DateRead { get; set; }
         public DateTime MessageSent { get; set; }
     }
 }
